@@ -1,0 +1,59 @@
+POJO son las iniciales de “Plain Old Java Object”, 
+que puede interpretarse como “Un objeto Java Plano Antiguo”. 
+Un POJO es una instancia de una clase que no extiende ni implementa nada en especial.
+ Para los programadores Java sirve para enfatizar el uso de clases simples y 
+que no dependen de un framework en especial
+
+
+POJO
+
+POJO significa Plain Old Java Object. Se trata de un objeto Java común, no vinculado por ninguna restricción 
+especial que no sea forzada por la especificación de lenguaje Java y que no requiera ninguna ruta de clase. 
+POJOs se utilizan para aumentar la legibilidad y la reutilización de un programa. 
+POJOs han ganado la mayoría de la aceptación porque son fáciles de escribir y de entender. 
+Se introdujeron en EJB 3.0 por microsistemas Sun.
+
+Un POJO no debe contener lo siguiente:
+
+Extender clases preespecificadas, Ej: public class GFG extends javax.servlet.http.HttpServlet {...} no es una clase POJO.
+Implementar interfaces preespecificadas, Ej: public class Bar implements javax.ejb.EntityBean {...} no es una clase POJO.
+Anotaciones preespecificadas, Ej: @javax.persistence.Entity public class Baz {...} no es una clase POJO.
+POJOs básicamente define una entidad. Si en tu programa deseas una clase de empleado, entonces puedes crear un POJO de la siguiente manera:
+
+// Employee POJO clase que representa una entidad empleado
+public class Employee
+{
+    // campo por defecto
+    String name;
+
+    // campo público
+    public String id;
+
+    // salario privado
+    private double salary;
+
+    //constructor para inicializar los campos
+    public Employee(String name, String id, 
+                             double salary)
+    {
+        this.name = name;
+        this.id = id;
+        this.salary = salary;
+    }
+
+    // getters
+    public String getName()
+    {
+        return name;
+    }
+
+    public String getId()
+    {
+        return id;
+    }
+
+    public Double getSalary()
+    {
+        return salary;
+    }
+}
